@@ -11,7 +11,7 @@ commonAnnotations:
 
 resources:
  - namespace.yaml
- - ../../../apps/base/
+ - ../../../app/base/
 
 patchesStrategicMerge:
 - deployment_app.yaml
