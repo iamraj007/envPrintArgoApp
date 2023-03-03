@@ -7,6 +7,3 @@ spec:
     spec:
       containers:
       - name: gitops-printenv-container 
-        env:
-        - name: ENV_VAR
-          value: ENV_VAR_VALUE
