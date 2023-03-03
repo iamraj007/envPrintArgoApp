@@ -18,7 +18,7 @@ patchesStrategicMerge:
 - replica-and-rollout-strategy.yaml
 
 images:
-- name: iamraj007/printenv:output
+- name: iamraj007/printenv
   newTag: output
 
 nameSuffix: -dev
