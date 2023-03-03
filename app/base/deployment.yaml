@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-envdisplay
+  labels:
+    app: envdisplay-app
+spec:
+  replicas: 1        
+  selector:
+    matchLabels:
+      app: envdisplay-app
+  template:
+    metadata:
+      labels:
+        app: envdisplay-app
+    spec:
+      containers:
+      - name: envdisplay-app-pod
+        image: iamraj007/printenv:output

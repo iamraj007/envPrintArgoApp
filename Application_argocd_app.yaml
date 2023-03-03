@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: printenv-app
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: myprintimage=iamraj007/printenv
+    argocd-image-updater.argoproj.io/git-branch: main                       
+    argocd-image-updater.argoproj.io/write-back-method: argocd
+    argocd-image-updater.argoproj.io/myprintimage.update-strategy: digest 
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/iamraj007/envPrintArgoApp.git
+    targetRevision: HEAD
+    path: app/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
