@@ -10,7 +10,7 @@ commonAnnotations:
   appnature: print_env
 
 resources:
- - ns.yaml
+ - namespace.yaml
  - ../../../apps/base/
 
 patchesStrategicMerge:
